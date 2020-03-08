@@ -276,3 +276,39 @@ function isPrime(number) {
 
 //------------------------------
 
+// Section 5 Objects
+
+//Factory Function
+
+function createCircle(radius) {
+  return {
+    radius,
+    draw() {
+      console.log(draw);
+    }
+  };
+}
+const circle1 = createCircle(1);
+console.log(circle1);
+
+const circle2 = createCircle(2);
+console.log(circle2);
+
+// We have 2 different circle objects and a single definition of the draw method
+
+// Constructor Function
+
+function Circle (radius) {
+  this.radius = radius; // adding a new property to an empty object
+  this.draw = function() { // adding a new method to the object
+    console.log("draw");
+  }
+  return this
+}
+
+cosnt circle = new Circle(1); 
+// operator 'new' creates an empty object then it will set 'this' to point to that new object 
+// and then 'new' operator will return tha new object from Circle function
+
+
+//------------------------------
