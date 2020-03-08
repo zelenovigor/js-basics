@@ -233,3 +233,46 @@ function showStars(rows) {
 
 //------------------------------
 
+//Exercise - Prime Numbers
+
+showPrimes(10);
+
+// Composite & Prime (whose factors are only 1 and itself)
+
+// 12 = 1, 2, 3, 4, 6, 12
+// Can be devided evenly by its factors
+
+
+function showPrimes(limit) {
+for (let number = 2; number <= limit; number++){
+  // 2 - current (number)
+
+  let isPrime = true;
+  for(let factor = 2; factor < number; factor ++) {
+    if (number % factor === 0) {
+     isPrime = false;
+     break; 
+    }
+  }
+  if (isPrime) console.log(number);
+ }
+}
+
+//Exercise - Prime Numbers 2nd Option
+
+showPrimes(10);
+
+function showPrimes(limit) {
+for (let number = 2; number <= limit; number++)
+  if (isPrime(number)) console.log(number);
+}
+
+function isPrime(number) {
+  for(let factor = 2; factor < number; factor ++) 
+    if (number % factor === 0) 
+     return false; 
+  return true;
+}
+
+//------------------------------
+
