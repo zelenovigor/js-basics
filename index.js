@@ -148,3 +148,88 @@ console.log(key, obj[key]);
 }
 
 //------------------------------
+
+// Sum of multiples 3 and 5
+
+//return the multiples of 3 and 5
+//multiples of 3: 3, 6, 9
+//multiples of 5: 5, 10
+
+function sum(limit) {
+  let sum = 0;
+
+  for (let i = 0; i <= limit; i++)
+    if (i % 3 === 0 || i % 5 === 0)
+  sum+= i;
+
+  return sum;
+}
+
+console.log(sum(10));
+
+
+// simple adding
+
+// let num = add (3,6,9,5,10);
+
+// function add (a,b,c,d,e) {
+//   return a + b + c + d + e
+// }
+
+// console.log(num);
+
+
+//------------------------------
+
+
+//Exercise - Grade
+
+const marks = [80, 80, 50];
+
+// Average = (80 + 80 + 50) / 3 = 70
+
+// 1-59: F
+// 60-69: D
+// 70-79: C
+// 80-89: B
+// 90-100: A
+
+function calculateGrade(marks) {
+  const average = calculateAverage(marks);
+  if (average < 60) return 'F';
+  if (average < 70) return 'D';
+  if (average < 80) return 'C';
+  if (average < 90) return 'B';
+  return 'A';
+}
+
+function calculateAverage(array) { 
+  let sum = 0;
+  for ( let value of array)
+    sum += value;
+  return sum / array.length;
+
+}
+
+console.log(calculateGrade(marks));
+
+// console.log(calculateAverage(marks));
+
+
+//------------------------------
+
+//Exercise - Stars
+
+showStars(10);
+
+function showStars(rows) {
+  for (let row = 1; row <= rows; row++) {
+    let pattern = '';
+    for (let i = 0; i < row; i++) // nested loop (loop inside of another loop)
+      pattern += '*';
+    console.log(pattern);
+  } 
+}
+
+//------------------------------
+
