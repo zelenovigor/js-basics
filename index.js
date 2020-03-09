@@ -312,3 +312,22 @@ cosnt circle = new Circle(1);
 
 
 //------------------------------
+
+// Exercise 1-Address Object
+
+// Exercise 1-Address Object
+
+const address = {
+  street: 'Jackson street',
+  city: 'Miami',
+  zipCode: 33021,
+}
+
+ function showAddress(address){
+    for (let key in address)
+    console.log(key,address[key]);
+  }
+
+  showAddress(address);
+
+  //------------------------------
