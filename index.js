@@ -2,27 +2,20 @@
 
 let hour = 10;
 
-if (hour >= 6 && hour < 12) 
-    console.log('Good morning');
+if (hour >= 6 && hour < 12) console.log("Good morning");
+else if (hour >= 12 && hour < 18) console.log("Good afternoon");
+else console.log("Good evening");
 
-else if (hour hour >=12 && hour < 18) 
-    console.log('Good afternoon');
+//------------------------------
 
-else
- console.log('Good evening';)
-
-
- //------------------------------
-
- let number = max (3,5);
+let number = max(3, 5);
 console.log(number);
 
-function max(a,b) {
+function max(a, b) {
   // if (a > b) return a;
   // else return b;
 
-return (a > b) ? a : b; // using conditional operator
-
+  return a > b ? a : b; // using conditional operator
 }
 
 //------------------------------
@@ -30,18 +23,17 @@ return (a > b) ? a : b; // using conditional operator
 // Exercise Landscape or Portrait
 
 function isLandscape(width, height) {
-    // if (width > height) return true;
-    // return false;
-  
-    //return (width > height) ? true : false;
-    // conditional operator
-  
-    return (width > height);
-  
-  }
-  console.log(isLandscape(800,600));
+  // if (width > height) return true;
+  // return false;
 
-//------------------------------  
+  //return (width > height) ? true : false;
+  // conditional operator
+
+  return width > height;
+}
+console.log(isLandscape(800, 600));
+
+//------------------------------
 // Exercise - FizzBuzz
 
 // Divisible by 3 => Fizz
@@ -54,17 +46,13 @@ const output = fizzBuzz(15);
 console.log(output);
 
 function fizzBuzz(input) {
-  if (typeof input !== 'number')
-  return 'Not a number';
+  if (typeof input !== "number") return "Not a number";
 
-  if ((input % 3 === 0) && (input % 5 === 0))
-  return 'FizzBuzz';
+  if (input % 3 === 0 && input % 5 === 0) return "FizzBuzz";
 
-  if (input % 3 === 0)
-  return 'Fizz';
+  if (input % 3 === 0) return "Fizz";
 
-  if (input % 5 === 0)
-  return 'Buzz'
+  if (input % 5 === 0) return "Buzz";
 
   return input;
 }
@@ -78,22 +66,18 @@ function fizzBuzz(input) {
 // Use Math.floor(1.3)
 // 12 points -> suspended
 
-checkSpeed (130);
+checkSpeed(130);
 
 function checkSpeed(speed) {
   const speedLimit = 70;
   const kmPerPoint = 5;
-if (speed <= speedLimit + kmPerPoint)
-console.log('Ok');
-else {
-  const points = Math.floor((speed - speedLimit) / kmPerPoint);
-  if (points >= 12)
-  console .log('License suspended');
-  else
-  console.log('Points', points);
+  if (speed <= speedLimit + kmPerPoint) console.log("Ok");
+  else {
+    const points = Math.floor((speed - speedLimit) / kmPerPoint);
+    if (points >= 12) console.log("License suspended");
+    else console.log("Points", points);
+  }
 }
-}
-
 
 //------------------------------
 
@@ -102,49 +86,45 @@ else {
 showNumbers(10);
 
 function showNumbers(limit) {
-for (let i = 0; i <= limit; i++) {
-  // option 1
-  // if (i % 2 === 0) console.log(i,'EVEN');
-  // else console.log(i, 'ODD');
+  for (let i = 0; i <= limit; i++) {
+    // option 1
+    // if (i % 2 === 0) console.log(i,'EVEN');
+    // else console.log(i, 'ODD');
 
-  // option 2
-  const message = (i % 2 === 0) ? 'EVEN' : 'ODD';
-  console.log(i,message);
-}
+    // option 2
+    const message = i % 2 === 0 ? "EVEN" : "ODD";
+    console.log(i, message);
+  }
 }
 
 //------------------------------
 
 // Exercise-Count Truthy
 
-const array = [0, null, undefined, '', 2, 3];
+const array = [0, null, undefined, "", 2, 3];
 
 console.log(countTruthy(array));
 
 function countTruthy(array) {
   let count = 0;
-  for (let value of array)
-  if (value)
-  count++;
+  for (let value of array) if (value) count++;
   return count;
 }
 
 // Exercise-String Properties
 
 const movie = {
-  title: 'a',
+  title: "a",
   releaseYear: 2018,
   rating: 4.5,
-  director: 'b'
+  director: "b"
 };
 
 showProperties(movie);
 
-function showProperties(obj){
-for (let key in obj)
-console.log(key);
-if (typeof obj[key] === 'string')
-console.log(key, obj[key]);
+function showProperties(obj) {
+  for (let key in obj) console.log(key);
+  if (typeof obj[key] === "string") console.log(key, obj[key]);
 }
 
 //------------------------------
@@ -158,15 +138,12 @@ console.log(key, obj[key]);
 function sum(limit) {
   let sum = 0;
 
-  for (let i = 0; i <= limit; i++)
-    if (i % 3 === 0 || i % 5 === 0)
-  sum+= i;
+  for (let i = 0; i <= limit; i++) if (i % 3 === 0 || i % 5 === 0) sum += i;
 
   return sum;
 }
 
 console.log(sum(10));
-
 
 // simple adding
 
@@ -178,9 +155,7 @@ console.log(sum(10));
 
 // console.log(num);
 
-
 //------------------------------
-
 
 //Exercise - Grade
 
@@ -196,25 +171,22 @@ const marks = [80, 80, 50];
 
 function calculateGrade(marks) {
   const average = calculateAverage(marks);
-  if (average < 60) return 'F';
-  if (average < 70) return 'D';
-  if (average < 80) return 'C';
-  if (average < 90) return 'B';
-  return 'A';
+  if (average < 60) return "F";
+  if (average < 70) return "D";
+  if (average < 80) return "C";
+  if (average < 90) return "B";
+  return "A";
 }
 
-function calculateAverage(array) { 
+function calculateAverage(array) {
   let sum = 0;
-  for ( let value of array)
-    sum += value;
+  for (let value of array) sum += value;
   return sum / array.length;
-
 }
 
 console.log(calculateGrade(marks));
 
 // console.log(calculateAverage(marks));
-
 
 //------------------------------
 
@@ -224,11 +196,15 @@ showStars(10);
 
 function showStars(rows) {
   for (let row = 1; row <= rows; row++) {
-    let pattern = '';
-    for (let i = 0; i < row; i++) // nested loop (loop inside of another loop)
-      pattern += '*';
+    let pattern = "";
+    for (
+      let i = 0;
+      i < row;
+      i++ // nested loop (loop inside of another loop)
+    )
+      pattern += "*";
     console.log(pattern);
-  } 
+  }
 }
 
 //------------------------------
@@ -242,20 +218,19 @@ showPrimes(10);
 // 12 = 1, 2, 3, 4, 6, 12
 // Can be devided evenly by its factors
 
-
 function showPrimes(limit) {
-for (let number = 2; number <= limit; number++){
-  // 2 - current (number)
+  for (let number = 2; number <= limit; number++) {
+    // 2 - current (number)
 
-  let isPrime = true;
-  for(let factor = 2; factor < number; factor ++) {
-    if (number % factor === 0) {
-     isPrime = false;
-     break; 
+    let isPrime = true;
+    for (let factor = 2; factor < number; factor++) {
+      if (number % factor === 0) {
+        isPrime = false;
+        break;
+      }
     }
+    if (isPrime) console.log(number);
   }
-  if (isPrime) console.log(number);
- }
 }
 
 //Exercise - Prime Numbers 2nd Option
@@ -263,14 +238,13 @@ for (let number = 2; number <= limit; number++){
 showPrimes(10);
 
 function showPrimes(limit) {
-for (let number = 2; number <= limit; number++)
-  if (isPrime(number)) console.log(number);
+  for (let number = 2; number <= limit; number++)
+    if (isPrime(number)) console.log(number);
 }
 
 function isPrime(number) {
-  for(let factor = 2; factor < number; factor ++) 
-    if (number % factor === 0) 
-     return false; 
+  for (let factor = 2; factor < number; factor++)
+    if (number % factor === 0) return false;
   return true;
 }
 
@@ -298,18 +272,18 @@ console.log(circle2);
 
 // Constructor Function
 
-function Circle (radius) {
+function Circle(radius) {
   this.radius = radius; // adding a new property to an empty object
-  this.draw = function() { // adding a new method to the object
+  this.draw = function() {
+    // adding a new method to the object
     console.log("draw");
-  }
-  return this
+  };
+  return this;
 }
 
-cosnt circle = new Circle(1); 
-// operator 'new' creates an empty object then it will set 'this' to point to that new object 
+const circle = new Circle(1);
+// operator 'new' creates an empty object then it will set 'this' to point to that new object
 // and then 'new' operator will return tha new object from Circle function
-
 
 //------------------------------
 
@@ -318,16 +292,45 @@ cosnt circle = new Circle(1);
 // Exercise 1-Address Object
 
 const address = {
-  street: 'Jackson street',
-  city: 'Miami',
-  zipCode: 33021,
+  street: "Jackson street",
+  city: "Miami",
+  zipCode: 33021
+};
+
+function showAddress(address) {
+  for (let key in address) console.log(key, address[key]);
 }
 
- function showAddress(address){
-    for (let key in address)
-    console.log(key,address[key]);
-  }
+showAddress(address);
 
-  showAddress(address);
+//------------------------------
 
-  //------------------------------
+// Exercise 2-Factory and Constructor Function
+
+// Factory Function
+
+const currentAddress = createAddress("Jackson street", "Miami", 33021);
+
+function createAddress(street, city, zipCode) {
+  return {
+    street,
+    city,
+    zipCode
+  };
+}
+
+console.log(currentAddress);
+
+// Constructor function
+
+let address = new Address("Jackson street", "Miami", 33021);
+
+function Address(street, city, zipCode) {
+  this.street = street;
+  this.city = city;
+  this.zipCode = zipCode;
+}
+
+console.log(address);
+
+//------------------------------
