@@ -61,10 +61,10 @@ function fizzBuzz(input) {
 
 // Exercise - Demerit Points
 
-// Speed Limit = 70
-// 5 -> 1 point
-// Use Math.floor(1.3)
-// 12 points -> suspended
+Speed Limit = 70
+5 -> 1 point
+Use Math.floor(1.3)
+12 points -> suspended
 
 checkSpeed(130);
 
@@ -334,3 +334,78 @@ function Address(street, city, zipCode) {
 console.log(address);
 
 //------------------------------
+
+// Exercise 3-Object Equality
+
+let address1 = new Address("Jackson street", "Miami", 33021);
+let address2 = new Address("Jackson street", "Miami", 33021);
+
+// Constructor Function
+function Address(street, city, zipCode) {
+  this.street = street;
+  this.city = city;
+  this.zipCode = zipCode;
+}
+
+function areEqual(address1, address2) {
+  return (
+    address1.street === address2.street &&
+    address1.city === address1.city &&
+    address1.zipCode === address1.zipCode
+  );
+}
+
+function areSame(address1, address2) {
+  return address1 === address2;
+}
+
+console.log(areEqual(address1, address2));
+
+console.log(areSame(address1, address2));
+
+//------------------------------
+
+// Exercise 4-Blog Post Object
+
+let post = {
+  title: "a",
+  body: "b",
+  author: "c",
+  views: 10,
+  comments: [
+    { author: "a", body: "b" },
+    { author: "c", body: "d" }
+  ],
+  isLive: true
+};
+
+console.log(post);
+
+//------------------------------
+
+// Exercise 5-Constructor Functions
+
+let post = new Post("a", "b", "c");
+
+function Post(title, body, author) {
+  this.title = title;
+  this.body = body;
+  this.author = author;
+  this.views = 0;
+  this.comments = [];
+  this.isLive = false;
+}
+
+console.log(post);
+
+//------------------------------
+
+// Exercise 6-Price Range Objects
+
+let priceRanges = [
+  { label: "$", tooltip: "Inexpensive", minPerPerson: 0, maxPerPerson: 10 },
+  { label: "$$", tooltip: "Moderate", minPerPerson: 11, maxPerPerson: 20 },
+  { label: "$$$", tooltip: "Expensive", minPerPerson: 21, maxPerPerson: 50 }
+];
+
+let restaurants = [{ averagePerPerson: 5 }];
