@@ -358,6 +358,35 @@ a === b
 // is converted to String 'foo' before comparison
 a == 'foo'
 
+// logical operator
+
+function A(){ console.log('called A'); return false; }
+function B(){ console.log('called B'); return true; }
+
+console.log( A() && B() );
+// logs "called A" due to the function call,
+// then logs false (which is the resulting value of the operator)
+
+console.log( B() || A() );
+// logs "called B" due to the function call,
+// then logs true (which is the resulting value of the operator)
+
+// Exercise 4-Blog Post Object
+
+let post = {
+  title: "a",
+  body: "b",
+  author: "c",
+  views: 10,
+  comments: [
+    { author: "a", body: "b" },
+    { author: "c", body: "d" }
+  ],
+  isLive: true
+};
+
+console.log(post);
+
 // Constructor Function
 function Address(street, city, zipCode) {
   this.street = street;
@@ -380,24 +409,6 @@ function areSame(address1, address2) {
 console.log(areEqual(address1, address2));
 
 console.log(areSame(address1, address2));
-
-//------------------------------
-
-// Exercise 4-Blog Post Object
-
-let post = {
-  title: "a",
-  body: "b",
-  author: "c",
-  views: 10,
-  comments: [
-    { author: "a", body: "b" },
-    { author: "c", body: "d" }
-  ],
-  isLive: true
-};
-
-console.log(post);
 
 //------------------------------
 
