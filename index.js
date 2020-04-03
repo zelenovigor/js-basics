@@ -628,3 +628,66 @@ let filteredNumbers = numbers.map(function(num, index) {
 //------------------------------
 //------------------------------
 //------------------------------
+
+// Grouping objects by a property
+
+let people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Max', age: 20 },
+  { name: 'Jane', age: 20 }
+];
+
+function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    let key = obj[property]
+    if (!acc[key]) {
+      acc[key] = []
+    }
+    acc[key].push(obj)
+    return acc
+  }, {})
+}
+
+let groupedPeople = groupBy(people, 'age')
+// groupedPeople is:
+// { 
+//   20: [
+//     { name: 'Max', age: 20 }, 
+//     { name: 'Jane', age: 20 }
+//   ], 
+//   21: [{ name: 'Alice', age: 21 }] 
+// }
+
+// Bonding arrays contained in an array of objects using the spread operator and initialValue
+
+// friends - an array of objects 
+// where object field "books" is a list of favorite books 
+let friends = [{
+  name: 'Anna',
+  books: ['Bible', 'Harry Potter'],
+  age: 21
+}, {
+  name: 'Bob',
+  books: ['War and peace', 'Romeo and Juliet'],
+  age: 26
+}, {
+  name: 'Alice',
+  books: ['The Lord of the Rings', 'The Shining'],
+  age: 18
+}]
+
+// allbooks - list which will contain all friends' books +  
+// additional list contained in initialValue
+let allbooks = friends.reduce(function(accumulator, currentValue) {
+  return [...accumulator, ...currentValue.books]
+}, ['Alphabet'])
+
+// allbooks = [
+//   'Alphabet', 'Bible', 'Harry Potter', 'War and peace', 
+//   'Romeo and Juliet', 'The Lord of the Rings',
+//   'The Shining'
+// ]
+
+//------------------------------
+//------------------------------
+//------------------------------
