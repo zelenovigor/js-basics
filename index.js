@@ -557,6 +557,7 @@ console.log(new myConstructorWithArguments);
 //------------------------------
 //------------------------------
 
+<<<<<<< HEAD
 let arr = [
   { id: 15 },
   { id: -1 },
@@ -591,8 +592,142 @@ console.log('Filtered Array\n', arrByID)
 
 console.log('Number of Invalid Entries = ', invalidEntries)
 // Number of Invalid Entries = 5
+=======
+var stringArray = ['Blue', 'Humpback', 'Beluga'];
+var numericStringArray = ['80', '9', '700'];
+var numberArray = [40, 1, 5, 200];
+var mixedNumericArray = ['80', '9', '700', 40, 1, 5, 200];
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+console.log('stringArray:', stringArray.join());
+console.log('Sorted:', stringArray.sort());
+
+console.log('numberArray:', numberArray.join());
+console.log('Sorted without a compare function:', numberArray.sort());
+console.log('Sorted with compareNumbers:', numberArray.sort(compareNumbers));
+
+console.log('numericStringArray:', numericStringArray.join());
+console.log('Sorted without a compare function:', numericStringArray.sort());
+console.log('Sorted with compareNumbers:', numericStringArray.sort(compareNumbers));
+
+console.log('mixedNumericArray:', mixedNumericArray.join());
+console.log('Sorted without a compare function:', mixedNumericArray.sort());
+console.log('Sorted with compareNumbers:', mixedNumericArray.sort(compareNumbers));
 
 //------------------------------
 //------------------------------
 //------------------------------
 
+function returnInt(element) {
+  return parseInt(element, 10)
+}
+
+['1', '2', '3'].map(returnInt); // [1, 2, 3]
+// Actual result is an array of numbers (as expected)
+
+// Same as above, but using the concise arrow function syntax
+['1', '2', '3'].map( str => parseInt(str) )
+
+// A simpler way to achieve the above, while avoiding the "gotcha":
+['1', '2', '3'].map(Number)  // [1, 2, 3]
+
+// But unlike parseInt(), Number() will also return a float or (resolved) exponential notation:
+['1.1', '2.2e2', '3e300'].map(Number)  // [1.1, 220, 3e+300]
+
+// For comparison, if we use parseInt() on the array above:
+['1.1', '2.2e2', '3e300'].map( str => parseInt(str) ) // [1, 2, 3]
+
+// --------
+
+let xs = ['10', '10', '10']
+
+xs = xs.map(parseInt)
+
+console.log(xs)
+// Actual result of 10,NaN,2 may be unexpected based on the above description.
+
+// --------
+
+let numbers = [1, 2, 3, 4]
+let filteredNumbers = numbers.map(function(num, index) {
+  if (index < 3) {
+     return num
+  }
+})
+// index goes from 0, so the filterNumbers are 1,2,3 and undefined.
+// filteredNumbers is [1, 2, 3, undefined]
+// numbers is still [1, 2, 3, 4]
+>>>>>>> 2a8f820b0f6884885dff00ddb8bb5e00351b00dd
+
+//------------------------------
+//------------------------------
+//------------------------------
+
+<<<<<<< HEAD
+=======
+// Grouping objects by a property
+
+let people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Max', age: 20 },
+  { name: 'Jane', age: 20 }
+];
+
+function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    let key = obj[property]
+    if (!acc[key]) {
+      acc[key] = []
+    }
+    acc[key].push(obj)
+    return acc
+  }, {})
+}
+
+let groupedPeople = groupBy(people, 'age')
+// groupedPeople is:
+// { 
+//   20: [
+//     { name: 'Max', age: 20 }, 
+//     { name: 'Jane', age: 20 }
+//   ], 
+//   21: [{ name: 'Alice', age: 21 }] 
+// }
+
+// Bonding arrays contained in an array of objects using the spread operator and initialValue
+
+// friends - an array of objects 
+// where object field "books" is a list of favorite books 
+let friends = [{
+  name: 'Anna',
+  books: ['Bible', 'Harry Potter'],
+  age: 21
+}, {
+  name: 'Bob',
+  books: ['War and peace', 'Romeo and Juliet'],
+  age: 26
+}, {
+  name: 'Alice',
+  books: ['The Lord of the Rings', 'The Shining'],
+  age: 18
+}]
+
+// allbooks - list which will contain all friends' books +  
+// additional list contained in initialValue
+let allbooks = friends.reduce(function(accumulator, currentValue) {
+  return [...accumulator, ...currentValue.books]
+}, ['Alphabet'])
+
+// allbooks = [
+//   'Alphabet', 'Bible', 'Harry Potter', 'War and peace', 
+//   'Romeo and Juliet', 'The Lord of the Rings',
+//   'The Shining'
+// ]
+
+//------------------------------
+//------------------------------
+//------------------------------
+>>>>>>> 2a8f820b0f6884885dff00ddb8bb5e00351b00dd
