@@ -557,42 +557,6 @@ console.log(new myConstructorWithArguments);
 //------------------------------
 //------------------------------
 
-<<<<<<< HEAD
-let arr = [
-  { id: 15 },
-  { id: -1 },
-  { id: 0 },
-  { id: 3 },
-  { id: 12.2 },
-  { },
-  { id: null },
-  { id: NaN },
-  { id: 'undefined' }
-]
-
-let invalidEntries = 0
-
-function isNumber(obj) {
-  return obj !== undefined && typeof(obj) === 'number' && !isNaN(obj)
-}
-
-function filterByID(item) {
-  if (isNumber(item.id) && item.id !== 0) {
-    return true
-  } 
-  invalidEntries++
-  return false;
-}
-
-let arrByID = arr.filter(filterByID)
-
-console.log('Filtered Array\n', arrByID)
-// Filtered Array
-// [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
-
-console.log('Number of Invalid Entries = ', invalidEntries)
-// Number of Invalid Entries = 5
-=======
 var stringArray = ['Blue', 'Humpback', 'Beluga'];
 var numericStringArray = ['80', '9', '700'];
 var numberArray = [40, 1, 5, 200];
@@ -660,14 +624,11 @@ let filteredNumbers = numbers.map(function(num, index) {
 // index goes from 0, so the filterNumbers are 1,2,3 and undefined.
 // filteredNumbers is [1, 2, 3, undefined]
 // numbers is still [1, 2, 3, 4]
->>>>>>> 2a8f820b0f6884885dff00ddb8bb5e00351b00dd
 
 //------------------------------
 //------------------------------
 //------------------------------
 
-<<<<<<< HEAD
-=======
 // Grouping objects by a property
 
 let people = [
@@ -730,4 +691,42 @@ let allbooks = friends.reduce(function(accumulator, currentValue) {
 //------------------------------
 //------------------------------
 //------------------------------
->>>>>>> 2a8f820b0f6884885dff00ddb8bb5e00351b00dd
+
+let arr = [
+  { id: 15 },
+  { id: -1 },
+  { id: 0 },
+  { id: 3 },
+  { id: 12.2 },
+  { },
+  { id: null },
+  { id: NaN },
+  { id: 'undefined' }
+]
+
+let invalidEntries = 0
+
+function isNumber(obj) {
+  return obj !== undefined && typeof(obj) === 'number' && !isNaN(obj)
+}
+
+function filterByID(item) {
+  if (isNumber(item.id) && item.id !== 0) {
+    return true
+  } 
+  invalidEntries++
+  return false;
+}
+
+let arrByID = arr.filter(filterByID)
+
+console.log('Filtered Array\n', arrByID)
+// Filtered Array
+// [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
+
+console.log('Number of Invalid Entries = ', invalidEntries)
+// Number of Invalid Entries = 5
+
+//------------------------------
+//------------------------------
+//------------------------------
