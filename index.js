@@ -748,3 +748,12 @@ var y = 2; // Declare and Initialize y
 a = 'Cran'; //Initialize a
 b = 'berry'; //Initialize b
 console.log(a + "" + b); // 'Cranberry'
+
+
+
+console.log('Filtered Array\n', arrByID)
+// Filtered Array
+// [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
+
+console.log('Number of Invalid Entries = ', invalidEntries)
+// Number of Invalid Entries = 5
