@@ -61,12 +61,12 @@ function fizzBuzz(input) {
 
 // Exercise - Demerit Points
 
-Speed Limit = 70
-5 -> 1 point
-Use Math.floor(1.3)
-12 points -> suspended
+// Speed Limit = 70
+// 5 -> 1 point
+// Use Math.floor(1.3)
+// 12 points -> suspended
 
-checkSpeed(130);
+// checkSpeed(130);
 
 function checkSpeed(speed) {
   const speedLimit = 70;
@@ -762,10 +762,13 @@ console.log('Number of Invalid Entries = ', invalidEntries)
 
 
 // ------------Test-------------- //
-<<<<<<< HEAD
 
 
 
 // ------------Test2-------------- //
-=======
->>>>>>> 7202bb60b6081948cd5adc753883f4f73947a69d
+
+
+
+// ------------Test3-------------- //
+
+
