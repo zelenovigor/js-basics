@@ -762,7 +762,10 @@ console.log('Number of Invalid Entries = ', invalidEntries)
 
 
 // ------------Test-------------- //
+<<<<<<< HEAD
 
 
 
 // ------------Test2-------------- //
+=======
+>>>>>>> 7202bb60b6081948cd5adc753883f4f73947a69d
