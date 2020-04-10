@@ -759,24 +759,18 @@ console.log('Number of Invalid Entries = ', invalidEntries)
 // Number of Invalid Entries = 5
 
 
+// Concatenating nested arrays
 
+const num1 = [[1]];
+const num2 = [2, [3]];
 
-// ------------Test-------------- //
+const numbers = num1.concat(num2);
 
+console.log(numbers);
+// results in [[1], 2, [3]]
 
+// modify the first element of num1
+num1[0].push(4);
 
-// ------------Test2-------------- //
-
-
-
-// ------------Test3-------------- //
-
-
-
-
-// ------------Test4-------------- //
-
-
-
-wefwefl;ewf;lengthwelwv;lwemv;
-wlkevnwlekvn;wkenmv;webkitCancelAnimationFramewlekvnlwe
+console.log(numbers);
+// results in [[1, 4], 2, [3]]
