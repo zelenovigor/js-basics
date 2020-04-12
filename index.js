@@ -774,3 +774,38 @@ num1[0].push(4);
 
 console.log(numbers);
 // results in [[1, 4], 2, [3]]
+
+// Rest parameters
+
+//From arguments to an array
+
+// Before rest parameters, "arguments" could be converted to a normal array using:
+
+function f(a, b) {
+
+  let normalArray = Array.prototype.slice.call(arguments)
+  // -- or --
+  let normalArray = [].slice.call(arguments)
+  // -- or --
+  let normalArray = Array.from(arguments)
+
+  let first = normalArray.shift()  // OK, gives the first argument
+  let first = arguments.shift()    // ERROR (arguments is not a normal array)
+}
+
+// Now, you can easily gain access to a normal array using a rest parameter
+
+function f(...args) {
+  let normalArray = args
+  let first = normalArray.shift() // OK, gives the first argument
+}
+
+// Destructuring rest parameters
+
+function f(...[a, b, c]) {
+  return a + b + c;
+}
+
+f(1)          // NaN (b and c are undefined)
+f(1, 2, 3)    // 6
+f(1, 2, 3, 4) // 6 (the fourth parameter is not destructured)
