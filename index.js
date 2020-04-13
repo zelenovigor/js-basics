@@ -809,3 +809,40 @@ function f(...[a, b, c]) {
 f(1)          // NaN (b and c are undefined)
 f(1, 2, 3)    // 6
 f(1, 2, 3, 4) // 6 (the fourth parameter is not destructured)
+
+
+// This keyworld
+
+// Ex 1
+
+// An object can be passed as the first argument to call or apply and this will be bound to it.
+var obj = {a: 'Custom'};
+
+// This property is set on the global object
+var a = 'Global';
+
+function whatsThis() {
+  return this.a;  // The value of this is dependent on how the function is called
+}
+
+whatsThis();          // 'Global'
+whatsThis.call(obj);  // 'Custom'
+whatsThis.apply(obj); // 'Custom'
+
+// Ex 2
+
+function add(c, d) {
+  return this.a + this.b + c + d;
+}
+
+var o = {a: 1, b: 3};
+
+// The first parameter is the object to use as
+// 'this', subsequent parameters are passed as 
+// arguments in the function call
+add.call(o, 5, 7); // 16
+
+// The first parameter is the object to use as
+// 'this', the second is an array whose
+// members are used as the arguments in the function call
+add.apply(o, [10, 20]); // 34
