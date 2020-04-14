@@ -811,7 +811,7 @@ f(1, 2, 3)    // 6
 f(1, 2, 3, 4) // 6 (the fourth parameter is not destructured)
 
 
-// This keyworld
+// This keyword
 
 // Ex 1
 
@@ -846,3 +846,39 @@ add.call(o, 5, 7); // 16
 // 'this', the second is an array whose
 // members are used as the arguments in the function call
 add.apply(o, [10, 20]); // 34
+
+
+// Conditional catch-blocks
+
+try {
+  myroutine(); // may throw three types of exceptions
+} catch (e) {
+  if (e instanceof TypeError) {
+    // statements to handle TypeError exceptions
+  } else if (e instanceof RangeError) {
+    // statements to handle RangeError exceptions
+  } else if (e instanceof EvalError) {
+    // statements to handle EvalError exceptions
+  } else {
+    // statements to handle any unspecified exceptions
+    logMyErrors(e); // pass exception object to error handler
+  }
+}
+
+// Nested try-blocks
+
+try {
+  try {
+    throw new Error('oops');
+  }
+  finally {
+    console.log('finally');
+  }
+}
+catch (ex) {
+  console.error('outer', ex.message);
+}
+
+// Output:
+// "finally"
+// "outer" "oops"
