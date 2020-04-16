@@ -919,3 +919,27 @@ add.call(o, 5, 7); // 16
 // 'this', the second is an array whose
 // members are used as the arguments in the function call
 add.apply(o, [10, 20]); // 34
+
+// Scope
+
+function exampleFunction() {
+  var x = "declared inside function";  // x can only be used in exampleFunction
+  console.log("Inside function");
+  console.log(x);
+}
+
+console.log(x);  // Causes error
+
+//----------------------------
+
+var x = "declared outside function";
+
+exampleFunction();
+
+function exampleFunction() {
+    console.log("Inside function");
+    console.log(x);
+}
+
+console.log("Outside function");
+console.log(x);
