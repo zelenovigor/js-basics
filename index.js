@@ -943,3 +943,30 @@ function exampleFunction() {
 
 console.log("Outside function");
 console.log(x);
+
+// Array.reduce()
+
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+
+//----------------------
+
+let maxCallback = ( acc, cur ) => Math.max( acc.x, cur.x );
+let maxCallback2 = ( max, cur ) => Math.max( max, cur );
+
+// reduce without initialValue
+[ { x: 2 }, { x: 22 }, { x: 42 } ].reduce( maxCallback ); // NaN
+[ { x: 2 }, { x: 22 }            ].reduce( maxCallback ); // 22
+[ { x: 2 }                       ].reduce( maxCallback ); // { x: 2 }
+[                                ].reduce( maxCallback ); // TypeError
+
+// map & reduce with initialValue; better solution, also works for empty or larger arrays
+[ { x: 22 }, { x: 42 } ].map( el => el.x ).reduce( maxCallback2, -Infinity );
