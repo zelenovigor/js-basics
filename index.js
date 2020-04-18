@@ -340,6 +340,24 @@ console.log(address);
 let address1 = new Address("Jackson street", "Miami", 33021);
 let address2 = new Address("Jackson street", "Miami", 33021);
 
+// Equality operator
+
+// true as both operands are type String (i.e. string primitives):
+'foo' === 'foo'
+
+var a = new String('foo');
+var b = new String('foo');
+
+// false as a and b are type Object and reference different objects
+a == b 
+
+// false as a and b are type Object and reference different objects
+a === b 
+
+// true as a and 'foo' are of different type and, the Object (a) 
+// is converted to String 'foo' before comparison
+a == 'foo'
+
 // Constructor Function
 function Address(street, city, zipCode) {
   this.street = street;
