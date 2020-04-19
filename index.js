@@ -988,3 +988,32 @@ let maxCallback2 = ( max, cur ) => Math.max( max, cur );
 
 // map & reduce with initialValue; better solution, also works for empty or larger arrays
 [ { x: 22 }, { x: 42 } ].map( el => el.x ).reduce( maxCallback2, -Infinity );
+
+// Using for without a statement
+
+function showOffsetPos(sId) {
+
+  var nLeft = 0, nTop = 0;
+
+  for (
+
+    var oItNode = document.getElementById(sId); /* initialization */
+
+    oItNode; /* condition */
+
+    nLeft += oItNode.offsetLeft, nTop += oItNode.offsetTop, oItNode = oItNode.offsetParent /* final-expression */
+
+  ); /* semicolon */ 
+
+  console.log('Offset position of \'' + sId + '\' element:\n left: ' + nLeft + 'px;\n top: ' + nTop + 'px;');
+
+}
+
+/* Example call: */
+
+showOffsetPos('content');
+
+// Output:
+// "Offset position of "content" element:
+// left: 0px;
+// top: 153px;"
