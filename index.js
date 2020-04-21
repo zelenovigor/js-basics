@@ -1028,3 +1028,35 @@ showOffsetPos('content');
 // "Offset position of "content" element:
 // left: 0px;
 // top: 153px;"
+
+// Sorting 
+
+function sortEggsInNest(a, b) {
+  if (a > b) {
+    return 1;
+  } else if (b > a) {
+    return -1;
+  } else {
+    return 0;
+  }
+}
+
+// function sortEggsInNest(a, b) {
+//   return a > b ? 1 : b > a ? -1 : 0;
+// }
+
+// Descending order
+
+function sortEggsInNest(a, b) {
+  if (a > b) {
+    return -1;;
+  } else if (b > a) {
+    return 1;;
+  } else {
+    return 0;
+  }
+}
+
+// function sortEggsInNest(a, b) {
+//   return a > b ? -1 : b > a ? 1 : 0;
+// }
