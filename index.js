@@ -20,6 +20,23 @@ function max(a, b) {
 
 //------------------------------
 
+// Using if else
+if (cipher_char === from_char) {
+  result = result + to_char;
+  x++;
+} else {
+  result = result + clear_char;
+}
+
+// Using else if 
+if (x > 50) {
+  /* do the right thing */
+} else if (x > 5) {
+  /* do the right thing */
+} else {
+  /* do the right thing */
+}
+
 // Exercise Landscape or Portrait
 
 function isLandscape(width, height) {
