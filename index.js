@@ -805,6 +805,7 @@ console.log('Number of Invalid Entries = ', invalidEntries)
 // Number of Invalid Entries = 5
 
 
+
 // Concatenating nested arrays
 
 const num1 = [[1]];
@@ -1077,3 +1078,22 @@ function sortEggsInNest(a, b) {
 // function sortEggsInNest(a, b) {
 //   return a > b ? -1 : b > a ? 1 : 0;
 // }
+
+// Find all prime numbers in an array
+
+let array = [4, 6, 8, 9, 12, 53, -17, 2, 5, 7, 31, 97, -1, 17];
+
+function isPrime(num) {
+    if (num <= 1)
+        return false;
+    else if (num === 2)
+        return true;
+    else {
+        for (let i = 2; i < num; i++)
+            if (num % i === 0)
+                return false;
+        return true;
+    }
+}
+
+console.log(array.filter(isPrime));   // [53, 2, 5, 7, 31, 97, 17]
