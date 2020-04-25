@@ -804,6 +804,33 @@ console.log('Filtered Array\n', arrByID)
 console.log('Number of Invalid Entries = ', invalidEntries)
 // Number of Invalid Entries = 5
 
+// Concatenating two arrays
+
+const letters = ['a', 'b', 'c'];
+const numbers = [1, 2, 3];
+
+letters.concat(numbers);
+// result in ['a', 'b', 'c', 1, 2, 3]
+
+// Concatenating three arrays
+
+const num1 = [1, 2, 3];
+const num2 = [4, 5, 6];
+const num3 = [7, 8, 9];
+
+const numbers = num1.concat(num2, num3);
+
+console.log(numbers); 
+// results in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// Concatenating values to an array
+
+const letters = ['a', 'b', 'c'];
+
+const alphaNumeric = letters.concat(1, [2, 3]);
+
+console.log(alphaNumeric); 
+// results in ['a', 'b', 'c', 1, 2, 3]
 
 
 // Concatenating nested arrays
